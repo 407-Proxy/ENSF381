@@ -1,0 +1,29 @@
+item no. 1
+image: schulich.png
+h3: Schulich School of Engineering
+p: UCalgary's hub for innovative engineering education. 
+
+----------------------------
+item no. 2
+image: electrical.png
+h3: Electrical Engineering
+p: Powering innovation in electronics and systems.
+
+----------------------------
+item no. 3
+image: chem_pet.png
+h3: Chemical Engineering
+p: Advancing processes for a sustainable future.
+
+----------------------------
+item no. 4
+image: biomed.png
+h3: Biomedical Engineering
+p: Engineering solutions for health and medicine.
+
+----------------------------
+item no. 5
+image: geomatics.png
+h3: Geomatics Engineering
+p: Mapping and analyzing the world around us.
+

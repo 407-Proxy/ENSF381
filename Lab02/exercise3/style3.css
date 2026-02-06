@@ -1,0 +1,20 @@
+.container{  
+    display: flex;
+    flex-direction: row;
+}
+ 
+.item {
+    flex: 1;
+
+    padding: 20px;
+    margin: 5px;
+    background-color: lightblue;
+    border: 1px solid darkblue;
+    text-align: center;
+}
+.item img {
+    width: 100px;
+    height: 100px;
+    display: block;
+    margin: 0 auto 10px;
+}
