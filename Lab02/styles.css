@@ -1,55 +1,67 @@
+/* Step 4: remove default browser spacing */
 body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
 }
 
-.table2{
-    border-spacing: 0 20px;
+/* Step 5: add vertical spacing between rows in table 2 */
+.table2 {
+  border-spacing: 0 20px;
 }
 
+/* Step 6: box backgrounds + center text */
 .box1 {
-    text-align: center;
-    background-color: darkred;
+  text-align: center;
+  background-color: darkred;
 }
-
 
 .box2 {
-    text-align: center;
-    background-color: deeppink;
+  text-align: center;
+  background-color: deeppink;
 }
 
 .box3 {
-    text-align: center;
-    background-color: brown;
+  text-align: center;
+  background-color: brown;
 }
 
+/* Step 7: text styling inside boxes */
 .box_text_color {
-    color: white;
-    padding: 10px;
-    margin: 0;
+  color: white;
+  padding: 10px;
 }
 
-.box_text_color p{
-    color: white;
+/* Remove default margins on text elements inside the boxes (more correct than margin:0 on the td) */
+.box_text_color h2,
+.box_text_color p {
+  margin: 0;
 }
 
-.box_text_color a{
-    color: inherit;
+/* Step 8: make links inherit the white color */
+.box_text_color a {
+  color: inherit;
 }
 
+/* Step 9: image container + images inside it */
 .td_image_cell {
-    width: 570px;
+  width: 570px;
 }
 
 .td_image_cell img {
-    width: 100%;
-    height: 100%;
-    display: block;
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
+/* Step 10: paragraph styling for the whole page */
 p {
-    font-family: Arial;
-    font-size: 16px;
-    color: #3d3d3d;
+  font-family: Arial;
+  font-size: 16px;
+  color: #3d3d3d;
+}
+
+/* Keep box paragraphs white (overrides the global p rule above) */
+.box_text_color p {
+  color: white;
 }
