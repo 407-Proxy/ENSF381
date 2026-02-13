@@ -41,10 +41,17 @@
       let name = "Alice";
       let age = 25;
 
-      let text = `"My name is ${name} and I am ${age} years old"`;
+      let text = `My name is ${name} and I am ${age} years old`;
       console.log(text);
 
-      
+      // Exercise 1D
+      const students = ["Alice", "Tom", "Charlie"];
+      const age1 = [19, 21, 20];  // named this age1 cause previous variable age from exercise 1C already exists.
+      for (let i = 0; i < students.length; i++){
+        let studentInfo = `My name is ${students[i]} and I am ${age1[i]} years old`;
+        console.log(studentInfo);
+      }
+
     </script>
   </body>
 </html>
