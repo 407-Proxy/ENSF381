@@ -9,17 +9,19 @@
   <body>
     <h1>JavaScript Lab Exercise 1</h1>
     <script>
-        let x = 5;
-        const y = 6;
-        var z = 9;
+      let string1 = "Hello World";
+      let string2 = "JavaScript is fun!";
 
-        x = 11;
-        try {
-            y = 99;
-        } catch(err){
-            console.log("Error: cannot reassign constant")
-        }
-        z = 55;
+      console.log(string1.length);
+    
+      // Two Ways to concat
+      let concatString = string1.concat(" ", string2);
+      console.log(string1 + string2);
+      console.log(concatString);
+
+      // Replace
+      let string3 = string2.replace("fun", "awesome");
+      console.log(string3);
     </script>
   </body>
 </html>
