@@ -9,11 +9,25 @@
   <body>
     <h1>JavaScript Lab Exercise 1</h1>
     <script>
+    
+    // Exercise 1A
+      let x = 5;
+      const y = 6;
+      var z = 9;
+      x = 11;
+      try {
+        y = 99;
+      } catch (err) {
+        console.log("Error: cannot reassign constant");
+      }
+      z = 55;
+
+      // Exercise 1B
       let string1 = "Hello World";
       let string2 = "JavaScript is fun!";
 
       console.log(string1.length);
-    
+
       // Two Ways to concat
       let concatString = string1.concat(" ", string2);
       console.log(string1 + string2);
@@ -22,6 +36,15 @@
       // Replace
       let string3 = string2.replace("fun", "awesome");
       console.log(string3);
+
+      // Exercise 1C
+      let name = "Alice";
+      let age = 25;
+
+      let text = `"My name is ${name} and I am ${age} years old"`;
+      console.log(text);
+
+      
     </script>
   </body>
 </html>
