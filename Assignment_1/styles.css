@@ -45,15 +45,11 @@ nav a:hover {
   background-color: #e57373;
 }
 
-/* ================= MAIN CONTENT ================= */
+/* ================= MAIN CONTENT BASE ================= */
 main {
   max-width: 1100px;
   width: 100%;
   margin: 40px auto;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;   /* centers the sections */
 }
 
 main section {
@@ -62,12 +58,103 @@ main section {
   padding: 25px;
   margin-bottom: 40px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-
-  width: 70%;            /* controls how wide the card is */
-  max-width: 700px;      /* prevents it from getting too big */
 }
+
 main section h2 {
   text-align: center;
+}
+
+/* ================= MENU: DROPDOWN ================= */
+.dropdown-center {
+  display: flex;
+  flex-direction: column; /* stack label then select */
+  align-items: center;    /* center both */
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.season-select {
+  background-color: #fff8ee;
+  border-radius: 10px;
+  padding: 6px 10px;
+  border: 2px solid #e4b48c;
+}
+
+.season-label {
+  margin: 0;
+  font-weight: bold;
+}
+
+/* ================= MENU: TILES (INLINE-BLOCK) ================= */
+.tile-wrap {
+  text-align: center;
+}
+
+.tile {
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 15px;
+  margin: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+
+  display: inline-block;
+  vertical-align: top;
+  width: 260px;
+  text-align: center;
+}
+
+.tile img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.tile h3 {
+  margin: 10px 0 6px 0;
+}
+
+.tile p {
+  margin: 6px 0;
+}
+
+/* hyperlink to customize_order.html */
+.customize-link {
+  display: inline-block;
+  margin-top: 10px;
+  background-color: #f28c8c;
+  color: white;
+  font-weight: bold;
+  border-radius: 12px;
+  padding: 8px 14px;
+  text-decoration: none;
+}
+
+/* ================= MENU: ADD / REMOVE BUTTONS ================= */
+.btn-add,
+.btn-remove {
+  color: white;
+  font-weight: bold;
+  border-radius: 12px;
+  padding: 8px 14px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-add {
+  background-color: #f28c8c;
+}
+
+.btn-remove {
+  background-color: #c94c4c;
+}
+
+.tile-actions {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
 }
 
 /* ================= FOOTER ================= */
