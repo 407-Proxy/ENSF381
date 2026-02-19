@@ -50,6 +50,10 @@ main {
   max-width: 1100px;
   width: 100%;
   margin: 40px auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* centers the sections */
 }
 
 main section {
@@ -58,8 +62,10 @@ main section {
   padding: 25px;
   margin-bottom: 40px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
 
+  width: 70%;            /* controls how wide the card is */
+  max-width: 700px;      /* prevents it from getting too big */
+}
 main section h2 {
   text-align: center;
 }
