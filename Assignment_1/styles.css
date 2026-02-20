@@ -24,11 +24,17 @@ header h1 {
 }
 
 /* ================= NAVIGATION BAR ================= */
+/* The nav container is the div directly after header */
 header + div {
   background-color: #fff3e0;
   text-align: center;
   padding: 10px;
   border-bottom: 3px solid #e4b48c;
+}
+
+nav {
+  text-align: center;
+  padding: 10px 0;
 }
 
 nav a {
@@ -52,6 +58,7 @@ main {
   margin: 40px auto;
 }
 
+/* Default section styling (Homepage + Menu sections) */
 main section {
   background-color: #fff8ee;
   border-radius: 25px;
@@ -64,13 +71,64 @@ main section h2 {
   text-align: center;
 }
 
+/* ================= LOGIN + CUSTOMIZE PAGES ================= */
+/* Forms centered */
+form {
+  text-align: center;
+  padding: 10px 0;
+  margin-bottom: 70px;
+}
+
+/* Inputs styled */
+input {
+  background-color: #fff8ee;
+  border: 2px solid #f9e2c8;
+  padding: 6px 10px;
+  border-radius: 10px;
+}
+
+/* Generic button styling used across pages */
+button {
+  background-color: #f28c8c;
+  color: white;
+  font-weight: bold;
+  border-radius: 12px;
+  padding: 8px 14px;
+  border: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* Link buttons (login + finish order + summary) */
+a.summary-btn,
+a.customize-link {
+  text-decoration: none;
+  background-color: #f28c8c;
+  color: white;
+  font-weight: bold;
+  border-radius: 12px;
+  padding: 8px 14px;
+  display: inline-block;
+}
+
+/* Hover pointers for button-like links */
+a.summary-btn:hover,
+a.customize-link:hover {
+  cursor: pointer;
+}
+
 /* ================= MENU: DROPDOWN ================= */
 .dropdown-center {
   display: flex;
-  flex-direction: column; /* stack label then select */
-  align-items: center;    /* center both */
+  flex-direction: column;
+  align-items: center;
   gap: 6px;
   margin-top: 10px;
+}
+
+.season-label {
+  margin: 0;
+  font-weight: bold;
 }
 
 .season-select {
@@ -78,11 +136,6 @@ main section h2 {
   border-radius: 10px;
   padding: 6px 10px;
   border: 2px solid #e4b48c;
-}
-
-.season-label {
-  margin: 0;
-  font-weight: bold;
 }
 
 /* ================= MENU: TILES (INLINE-BLOCK) ================= */
@@ -119,37 +172,7 @@ main section h2 {
   margin: 6px 0;
 }
 
-/* hyperlink to customize_order.html */
-.customize-link {
-  display: inline-block;
-  margin-top: 10px;
-  background-color: #f28c8c;
-  color: white;
-  font-weight: bold;
-  border-radius: 12px;
-  padding: 8px 14px;
-  text-decoration: none;
-}
-
-/* ================= MENU: ADD / REMOVE BUTTONS ================= */
-.btn-add,
-.btn-remove {
-  color: white;
-  font-weight: bold;
-  border-radius: 12px;
-  padding: 8px 14px;
-  border: none;
-  cursor: pointer;
-}
-
-.btn-add {
-  background-color: #f28c8c;
-}
-
-.btn-remove {
-  background-color: #c94c4c;
-}
-
+/* Buttons in Seasonal Specials */
 .tile-actions {
   margin-top: 10px;
   display: flex;
@@ -157,39 +180,46 @@ main section h2 {
   gap: 10px;
 }
 
-/* ================= Order Summary ================= */
-table {
-    border: 1px solid black;
-    border-collapse: collapse;
-    background-color: #fff8ee;
-    margin: 0 auto;
-    text-align: left;
-}
-th, td {
-    border: 1px solid black;
-    padding: 10px 15px;
-}
-
-/* ================= ORDER SUMMARY BUTTONS ================= */
-.summary-buttons {
-  text-align: center;
-  margin-top: 20px;
-}
-
-.summary-btn {
-  display: inline-block;
-  background-color: #f28c8c;  
+.btn-add {
+  background-color: #f28c8c;
   color: white;
   font-weight: bold;
   border-radius: 12px;
   padding: 8px 14px;
-  text-decoration: none;
   border: none;
-  margin: 0 10px;
   cursor: pointer;
 }
 
+.btn-remove {
+  background-color: #c94c4c;
+  color: white;
+  font-weight: bold;
+  border-radius: 12px;
+  padding: 8px 14px;
+  border: none;
+  cursor: pointer;
+}
 
+/* ================= ORDER SUMMARY TABLE ================= */
+table {
+  border: 1px solid black;
+  border-collapse: collapse;
+  background-color: #fff8ee;
+  margin: 0 auto;
+  text-align: left;
+}
+
+th,
+td {
+  border: 1px solid black;
+  padding: 10px 15px;
+}
+
+/* Center the summary buttons row */
+.summary-buttons {
+  text-align: center;
+  margin-top: 20px;
+}
 
 /* ================= FOOTER ================= */
 footer {
@@ -198,4 +228,3 @@ footer {
   padding: 15px;
   border-top: 3px solid #e4b48c;
 }
-

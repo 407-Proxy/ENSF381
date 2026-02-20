@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ice Cream Shop</title>
-    <link rel="stylesheet" href="loginstyles.css" />
+    <link rel="stylesheet" href="styles.css" />
   </head>
 
   <body>
@@ -20,9 +20,8 @@
     </div>
 
     <main>
-      <h2>Welcome</h2>
-
-      <form>
+      <form action="menu_view.html">
+        <h2>Welcome</h2>
         <label for="name">Username:</label><br />
         <input type="text" id="name" name="name" /><br /><br />
 
@@ -31,7 +30,9 @@
         <br />
         <input type="checkbox" id="forgot" name="forgot" />
         <label for="forgot">Forgot Password</label>
-        <a class="login" href="menu_view.html">Login</a>
+        <br />
+        <br />
+        <button type="submit">Login</button>
       </form>
     </main>
 
