@@ -1,7 +1,15 @@
 /* ================= GENERAL RESET ================= */
+html {
+  height: 100%;
+  margin: 0;
+}
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 /* ================= HEADER ================= */
@@ -56,6 +64,7 @@ main {
   max-width: 1100px;
   width: 100%;
   margin: 40px auto;
+  flex: 1;
 }
 
 /* Default section styling (Homepage + Menu sections) */
@@ -97,11 +106,13 @@ button {
   border: none;
   display: inline-block;
   cursor: pointer;
+  margin: auto 5px;
 }
 
 /* Link buttons (login + finish order + summary) */
-a.summary-btn,
-a.customize-link {
+a.customize-link,
+a.login,
+a.finish-order {
   text-decoration: none;
   background-color: #f28c8c;
   color: white;
@@ -112,8 +123,9 @@ a.customize-link {
 }
 
 /* Hover pointers for button-like links */
-a.summary-btn:hover,
-a.customize-link:hover {
+a.customize-link:hover,
+a.login:hover,
+a.finish-order:hover {
   cursor: pointer;
 }
 
