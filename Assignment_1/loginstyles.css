@@ -80,3 +80,27 @@ a.login {
 a.login:hover {
   cursor: pointer;
 }
+
+button {
+  text-decoration: none;
+  background-color: #f28c8c;
+  color: white;
+  font-weight: bold;
+  border-radius: 12px;
+  padding: 8px 14px;
+  display: inline-block;
+}
+
+a.finish-order {
+  text-decoration: none;
+  background-color: #f28c8c;
+  color: white;
+  font-weight: bold;
+  border-radius: 12px;
+  padding: 8px 14px;
+  display: inline-block;
+}
+
+a.finish-order:hover {
+  cursor: pointer;
+}
