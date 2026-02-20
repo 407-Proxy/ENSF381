@@ -157,6 +157,40 @@ main section h2 {
   gap: 10px;
 }
 
+/* ================= Order Summary ================= */
+table {
+    border: 1px solid black;
+    border-collapse: collapse;
+    background-color: #fff8ee;
+    margin: 0 auto;
+    text-align: left;
+}
+th, td {
+    border: 1px solid black;
+    padding: 10px 15px;
+}
+
+/* ================= ORDER SUMMARY BUTTONS ================= */
+.summary-buttons {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.summary-btn {
+  display: inline-block;
+  background-color: #f28c8c;  
+  color: white;
+  font-weight: bold;
+  border-radius: 12px;
+  padding: 8px 14px;
+  text-decoration: none;
+  border: none;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+
+
 /* ================= FOOTER ================= */
 footer {
   background-color: #f9e2c8;
@@ -164,3 +198,4 @@ footer {
   padding: 15px;
   border-top: 3px solid #e4b48c;
 }
+
