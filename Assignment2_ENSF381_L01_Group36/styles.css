@@ -1,0 +1,242 @@
+/* ================= GENERAL RESET ================= */
+html {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ================= HEADER ================= */
+header {
+  background-color: #f9e2c8;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 30px;
+  border-bottom: 3px solid #e4b48c;
+}
+
+header img {
+  width: 60px;
+  height: auto;
+}
+
+header h1 {
+  margin: 0;
+}
+
+/* ================= NAVIGATION BAR ================= */
+/* The nav container is the div directly after header */
+header + div {
+  background-color: #fff3e0;
+  text-align: center;
+  padding: 10px;
+  border-bottom: 3px solid #e4b48c;
+}
+
+nav {
+  text-align: center;
+  padding: 10px 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: brown;
+  background-color: #f28c8c;
+  font-weight: bold;
+  margin: 0 10px;
+  padding: 6px 12px;
+  border-radius: 12px;
+}
+
+nav a:hover {
+  background-color: #e57373;
+}
+
+/* ================= MAIN CONTENT BASE ================= */
+main {
+  max-width: 1100px;
+  width: 100%;
+  margin: 40px auto;
+  flex: 1;
+}
+
+/* Default section styling (Homepage + Menu sections) */
+main section {
+  background-color: #fff8ee;
+  border-radius: 25px;
+  padding: 25px;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+main section h2 {
+  text-align: center;
+}
+
+/* ================= LOGIN + CUSTOMIZE PAGES ================= */
+/* Forms centered */
+form {
+  text-align: center;
+  padding: 10px 0;
+  margin-bottom: 70px;
+}
+
+/* Inputs styled */
+input {
+  background-color: #fff8ee;
+  border: 2px solid #f9e2c8;
+  padding: 6px 10px;
+  border-radius: 10px;
+}
+
+/* Generic button styling used across pages */
+button {
+  background-color: #f28c8c;
+  color: white;
+  font-weight: bold;
+  border-radius: 12px;
+  padding: 8px 14px;
+  border: none;
+  display: inline-block;
+  cursor: pointer;
+  margin: auto 5px;
+}
+
+/* Link buttons (login + finish order + summary) */
+a.customize-link,
+a.login,
+a.finish-order {
+  text-decoration: none;
+  background-color: #f28c8c;
+  color: white;
+  font-weight: bold;
+  border-radius: 12px;
+  padding: 8px 14px;
+  display: inline-block;
+}
+
+/* Hover pointers for button-like links */
+a.customize-link:hover,
+a.login:hover,
+a.finish-order:hover {
+  cursor: pointer;
+}
+
+/* ================= MENU: DROPDOWN ================= */
+.dropdown-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.season-label {
+  margin: 0;
+  font-weight: bold;
+}
+
+.season-select {
+  background-color: #fff8ee;
+  border-radius: 10px;
+  padding: 6px 10px;
+  border: 2px solid #e4b48c;
+}
+
+/* ================= MENU: TILES (INLINE-BLOCK) ================= */
+.tile-wrap {
+  text-align: center;
+}
+
+.tile {
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 15px;
+  margin: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+
+  display: inline-block;
+  vertical-align: top;
+  width: 260px;
+  text-align: center;
+}
+
+.tile img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.tile h3 {
+  margin: 10px 0 6px 0;
+}
+
+.tile p {
+  margin: 6px 0;
+}
+
+/* Buttons in Seasonal Specials */
+.tile-actions {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.btn-add {
+  background-color: #f28c8c;
+  color: white;
+  font-weight: bold;
+  border-radius: 12px;
+  padding: 8px 14px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-remove {
+  background-color: #c94c4c;
+  color: white;
+  font-weight: bold;
+  border-radius: 12px;
+  padding: 8px 14px;
+  border: none;
+  cursor: pointer;
+}
+
+/* ================= ORDER SUMMARY TABLE ================= */
+table {
+  border: 1px solid black;
+  border-collapse: collapse;
+  background-color: #fff8ee;
+  margin: 0 auto;
+  text-align: left;
+}
+
+th,
+td {
+  border: 1px solid black;
+  padding: 10px 15px;
+}
+
+/* Center the summary buttons row */
+.summary-buttons {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* ================= FOOTER ================= */
+footer {
+  background-color: #f9e2c8;
+  text-align: center;
+  padding: 15px;
+  border-top: 3px solid #e4b48c;
+}
