@@ -149,10 +149,103 @@
           </article>
         </div>
       </section>
+
+      <section>
+        <h2>Cart</h2>
+        <ul id="cart-list"></ul>
+      </section>
     </main>
 
     <footer>
       <p>&copy; 2026 Sweet Scoop Ice Cream. All rights reserved.</p>
     </footer>
+
+    <script>
+      const cart = [];
+      const cartList = document.getElementById("cart-list");
+
+      function renderCart() {
+        cartList.innerHTML = "";
+
+        if (cart.length === 0) {
+          cartList.innerHTML = '<li class="empty-cart">No items in cart.</li>';
+          return;
+        }
+
+        const groupedCart = {};
+
+        for (let i = 0; i < cart.length; i++) {
+          const item = cart[i];
+          const priceNumber = parseFloat(item.price.replace("$", ""));
+
+          if (!groupedCart[item.name]) {
+            groupedCart[item.name] = {
+              quantity: 0,
+              unitPrice: priceNumber,
+            };
+          }
+
+          groupedCart[item.name].quantity++;
+        }
+
+        for (const itemName in groupedCart) {
+          const quantity = groupedCart[itemName].quantity;
+          const totalPrice = groupedCart[itemName].unitPrice * quantity;
+
+          const itemBox = document.createElement("li");
+          itemBox.className = "cart-item";
+
+          const leftSide = document.createElement("span");
+          leftSide.className = "cart-left";
+          leftSide.textContent = `${itemName} (${quantity})`;
+
+          const rightSide = document.createElement("span");
+          rightSide.className = "cart-right";
+          rightSide.textContent = `$${totalPrice.toFixed(2)}`;
+
+          itemBox.appendChild(leftSide);
+          itemBox.appendChild(rightSide);
+          cartList.appendChild(itemBox);
+        }
+      }
+
+      const addButtons = document.querySelectorAll(".btn-add");
+      const removeButtons = document.querySelectorAll(".btn-remove");
+
+      for (let i = 0; i < addButtons.length; i++) {
+        addButtons[i].addEventListener("click", function () {
+          const tile = addButtons[i].closest(".tile");
+          const flavorName = tile.querySelector("h3").textContent;
+          const flavorPrice = tile
+            .querySelector("p")
+            .textContent.replace("Price:", "")
+            .trim();
+
+          cart.push({
+            name: flavorName,
+            price: flavorPrice,
+          });
+
+          renderCart();
+        });
+      }
+
+      for (let i = 0; i < removeButtons.length; i++) {
+        removeButtons[i].addEventListener("click", function () {
+          const tile = removeButtons[i].closest(".tile");
+          const flavorName = tile.querySelector("h3").textContent;
+
+          const index = cart.findIndex((item) => item.name === flavorName);
+
+          if (index !== -1) {
+            cart.splice(index, 1);
+          }
+
+          renderCart();
+        });
+      }
+
+      renderCart();
+    </script>
   </body>
 </html>

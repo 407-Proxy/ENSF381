@@ -80,6 +80,39 @@ main section h2 {
   text-align: center;
 }
 
+#cart-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+  padding-left: 0;
+}
+
+#cart-list li {
+  list-style: none;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  border: 1px solid #d7b08f;
+  border-radius: 10px;
+  padding: 6px 10px;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 13px;
+}
+
+.empty-cart {
+  font-size: 13px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: none;
+}
+
 /* ================= LOGIN + CUSTOMIZE PAGES ================= */
 /* Forms centered */
 form {
@@ -190,6 +223,10 @@ a.finish-order:hover {
   display: flex;
   justify-content: center;
   gap: 10px;
+}
+
+.tile:hover {
+  background-color: #fdf1e8;
 }
 
 .btn-add {
