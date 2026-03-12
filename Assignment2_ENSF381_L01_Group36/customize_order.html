@@ -21,6 +21,7 @@
     </div>
 
     <main>
+      <h2 id="timer-display">Order Time Left: 10:00</h2>
       <form>
         <img src="Picture2.jpeg" width="250px" height="auto" />
         <h2>Vanilla Dream</h2>
@@ -58,5 +59,35 @@
     <footer>
       <p>&copy; 2026 Sweet Scoop Ice Cream. All rights reserved.</p>
     </footer>
+    <script>
+      let timerInterval;
+      let timeRemaining = 600; // 10 minutes in seconds
+
+      function startTimer() {
+        clearInterval(timerInterval);
+
+        const displayElement = document.getElementById("timer-display");
+        updateDisplay(timeRemaining, displayElement);
+
+        timerInterval = setInterval(() => {
+          timeRemaining--;
+          updateDisplay(timeRemaining, displayElement);
+
+          if (timeRemaining <= 0){
+            clearInterval(timerInterval);
+            window.location.href = "order_summary.html";
+          }
+        }, 1000);
+      };
+
+      function updateDisplay(time, element) {
+        const minutes = Math.floor(time / 60);
+        let seconds = time % 60;
+
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+        element.textContent = `Order Time Left: ${minutes}:${seconds}`;
+      };
+      startTimer()
+    </script>
   </body>
 </html>
