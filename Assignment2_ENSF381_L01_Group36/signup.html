@@ -6,7 +6,7 @@
     <title>Sign Up</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body >
+  <body class="login-sign-up-page">
     <header>
       <img src="logo.jpeg" alt="Shop Logo" width="100" />
       <h1>Sweet Scoop Ice Cream</h1>
@@ -18,12 +18,12 @@
       </nav>
     </div>
     <main>
-      <form>
+      <form class="signup" id="signup-form">
         <h2>Sign Up</h2>
         <label for="username">Username:</label><br />
         <input type="text" id="username" name="username" required /><br /><br />
         <label for="email">Email:</label><br />
-        <input type="email" id="email" name="email" required /><br /><br />
+        <input type="email" id="email" name="email" /><br /><br />
         <label for="password">Password:</label><br />
         <input
           type="password"
@@ -38,11 +38,103 @@
           name="confirm-password"
           required
         /><br /><br />
-        <input type="submit" value="Sign Up" />
+        <button class="signup-btn" type="submit">Sign Up</button><br />
+        <p id="success-message"></p>
+        <p id="error-box"></p>
       </form>
     </main>
     <footer>
       <p>&copy; 2026 Sweet Scoop Ice Cream. All rights reserved.</p>
     </footer>
+    <script>
+      function checkSignup(event) {
+        event.preventDefault();
+
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+        const confirmPassword =
+          document.getElementById("confirm-password").value;
+
+        const errorBox = document.getElementById("error-box");
+        const successMessage = document.getElementById("success-message");
+
+        errorBox.innerHTML = "";
+        successMessage.textContent = "";
+        errorBox.style.display = "none";
+        successMessage.style.display = "none";
+
+        const allowedCharacters = `abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()-_=+[]{}|;:'",.<>?/\\\`~`;
+        const validEmailEnding = [".com", ".net", ".io"];
+
+        let passwordError = "";
+        let emailError = "";
+
+        let hasUppercase = false;
+        let hasLowercase = false;
+        let hasNumber = false;
+        let hasSpecial = false;
+        let hasIllegalChar = false;
+
+        for (let char of password) {
+          if (!allowedCharacters.includes(char)) {
+            hasIllegalChar = true;
+          }
+
+          if (char >= "A" && char <= "Z") {
+            hasUppercase = true;
+          } else if (char >= "a" && char <= "z") {
+            hasLowercase = true;
+          } else if (char >= "0" && char <= "9") {
+            hasNumber = true;
+          } else {
+            hasSpecial = true;
+          }
+        }
+
+        if (
+          password.length < 8 ||
+          password.includes(" ") ||
+          hasIllegalChar ||
+          !hasUppercase ||
+          !hasLowercase ||
+          !hasNumber ||
+          !hasSpecial
+        ) {
+          passwordError =
+            "Invalid password (Min 8 characters, uppercase, lowercase, number, special character, no spaces)";
+        }
+
+        if (password !== confirmPassword) {
+          passwordError = "Passwords do not match.";
+        }
+
+        if (
+          !email.includes("@") ||
+          !validEmailEnding.some((ending) => email.endsWith(ending))
+        ) {
+          emailError =
+            "Invalid email format (Must contain @ and end with .com, .net, or .io)";
+        }
+
+        if (passwordError || emailError) {
+          errorBox.innerHTML = [passwordError, emailError]
+            .filter(Boolean)
+            .join("<br>");
+          errorBox.style.display = "block";
+          return;
+        }
+
+        successMessage.textContent = "Account created successfully!";
+        successMessage.style.display = "block";
+
+        setTimeout(() => {
+          window.location.href = "login.html";
+        }, 2000);
+      }
+
+      document
+        .getElementById("signup-form")
+        .addEventListener("submit", checkSignup);
+    </script>
   </body>
 </html>
