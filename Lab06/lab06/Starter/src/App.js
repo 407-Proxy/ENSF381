@@ -16,14 +16,13 @@ function App() {
         <div className="nav-buttons">
           <button
             className={`btn ${currentPage === 'directory' ? 'btn-active' : ''}`}
-            
             onClick={() => setCurrentPage('directory')}
           >
             Exercise 1: User Directory
           </button>
+
           <button
             className={`btn ${currentPage === 'tictactoe' ? 'btn-active' : ''}`}
-            
             onClick={() => setCurrentPage('tictactoe')}
           >
             Exercise 2: Tic-Tac-Toe

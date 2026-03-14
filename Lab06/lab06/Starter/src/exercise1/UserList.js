@@ -6,12 +6,7 @@ function UserList({ users, viewMode }) {
   }
 
   return (
-    <div
-      // use viewMode to switch between the `user-grid` and `user-list` classes. 
-      // When viewMode is "grid", the class should be "user-grid". 
-      // When viewMode is "list", the class should be "user-list".
-      className="user-grid"
-    >
+    <div className={viewMode === 'grid' ? 'user-grid' : 'user-list'}>
       {users.map((user) => (
         <UserCard key={user.id} user={user} />
       ))}
