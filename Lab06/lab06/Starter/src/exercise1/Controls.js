@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 function Controls({
   onDeleteClick,
@@ -6,7 +6,7 @@ function Controls({
   onSortByIdClick,
   onViewToggleClick,
 }) {
-  const [deleteId, setDeleteId] = useState('');
+  const [deleteId, setDeleteId] = useState("");
 
   return (
     <div className="controls-row">
@@ -20,16 +20,21 @@ function Controls({
         />
         <button
           className="btn btn-danger"
+<<<<<<< HEAD
           onClick={() => {
             onDeleteClick(deleteId);
             setDeleteId('');
           }}
+=======
+          onClick={() => onDeleteClick(deleteId)}
+>>>>>>> ba63da3 (Exercise 1 complete)
         >
           Delete
         </button>
       </div>
 
       <div className="other-controls">
+<<<<<<< HEAD
         <button
           className="btn"
           onClick={onSortByGroupClick}
@@ -48,6 +53,15 @@ function Controls({
           className="btn"
           onClick={onViewToggleClick}
         >
+=======
+        <button className="btn" onClick={onSortByGroupClick}>
+          Sort by Group
+        </button>
+        <button className="btn" onClick={onSortByIdClick}>
+          Sort by ID
+        </button>
+        <button className="btn" onClick={onViewToggleClick}>
+>>>>>>> ba63da3 (Exercise 1 complete)
           Grid / List View
         </button>
       </div>
