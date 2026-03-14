@@ -22,7 +22,7 @@
 
     <main>
       <h2 id="timer-display">Order Time Left: 10:00</h2>
-      <form>
+      <form onclick="validate()">
         <img src="Picture2.jpeg" width="250px" height="auto" />
         <h2>Vanilla Dream</h2>
         <h3>Choose Type</h3>
@@ -32,27 +32,29 @@
         <input type="radio" id="cone" name="type" value="cone" /><br />
         <label for="cone">Cone</label><br /><br />
 
-        <button type="submit">Submit Selection</button>
-
         <h2>Chocolate Bliss</h2>
         <h3>Select Toppings</h3>
 
         <input
           type="checkbox"
           id="sprinkles"
-          name="type"
+          name="toppings"
           value="sprinkles"
         /><br />
         <label for="sprinkles">Sprinkles</label><br />
 
-        <input type="checkbox" id="nuts" name="type" value="nuts" /><br />
+        <input type="checkbox" id="nuts" name="toppings" value="nuts" /><br />
         <label for="nuts">Nuts</label><br />
 
-        <input type="checkbox" id="caramel" name="type" value="caramel" /><br />
+        <input
+          type="checkbox"
+          id="caramel"
+          name="toppings"
+          value="caramel"
+        /><br />
         <label for="caramel">Caramel</label><br />
         <br />
-
-        <button type="submit">Submit Selection</button><br /><br />
+        <p id="price-tag"></p>
         <a class="finish-order" href="order_summary.html">Finish Order</a>
       </form>
     </main>
@@ -61,7 +63,7 @@
     </footer>
     <script>
       let timerInterval;
-      let timeRemaining = 600; // 10 minutes in seconds
+      let timeRemaining = 600;
 
       function startTimer() {
         clearInterval(timerInterval);
@@ -73,12 +75,12 @@
           timeRemaining--;
           updateDisplay(timeRemaining, displayElement);
 
-          if (timeRemaining <= 0){
+          if (timeRemaining <= 0) {
             clearInterval(timerInterval);
             window.location.href = "order_summary.html";
           }
         }, 1000);
-      };
+      }
 
       function updateDisplay(time, element) {
         const minutes = Math.floor(time / 60);
@@ -86,8 +88,45 @@
 
         seconds = seconds < 10 ? "0" + seconds : seconds;
         element.textContent = `Order Time Left: ${minutes}:${seconds}`;
-      };
-      startTimer()
+      }
+
+      function validate() {
+        const cup = document.getElementById("cup");
+        const cone = document.getElementById("cone");
+
+        const sprinkles = document.getElementById("sprinkles");
+        const nuts = document.getElementById("nuts");
+        const caramel = document.getElementById("caramel");
+
+        const priceTag = document.getElementById("price-tag");
+
+        const baseSelected = cup.checked || cone.checked;
+        const toppingSelected =
+          sprinkles.checked || nuts.checked || caramel.checked;
+
+        if (!baseSelected) {
+          alert("Please select a base flavor.");
+          return false;
+        }
+
+        if (!toppingSelected) {
+          alert("Please select at least one topping.");
+          return false;
+        }
+
+        let price = 6.0;
+
+        if (sprinkles.checked) price += 1.5;
+        if (nuts.checked) price += 1.5;
+        if (caramel.checked) price += 1.5;
+
+        priceTag.textContent = `Total Price: $${price.toFixed(2)}`;
+
+        
+        return false;
+      }
+
+      startTimer();
     </script>
   </body>
 </html>
