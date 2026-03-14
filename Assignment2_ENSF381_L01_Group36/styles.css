@@ -12,6 +12,10 @@ body {
   flex-direction: column;
 }
 
+body.login-sign-up-page {
+  background: linear-gradient(to bottom, #4fa8e6, #87ceeb, #e6f7ff);
+}
+
 /* ================= HEADER ================= */
 header {
   background-color: #f9e2c8;
@@ -118,8 +122,55 @@ main section h2 {
 /* Forms centered */
 form {
   text-align: center;
-  padding: 10px 0;
+  padding: 50px 0;
   margin-bottom: 70px;
+  background-color: #fff3e0;
+  border-radius: 20px;
+  color: black;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+form.signup {
+  padding: 20px;
+  max-width: none;
+  width: fit-content;
+  min-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sign-up {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+#error-message {
+  padding: 10px 14px;
+  margin: 20px auto 0 auto;
+  text-align: center;
+  border-radius: 5px;
+  width: fit-content;
+  min-width: 240px;
+  display: none;
+}
+
+#error-message.error-box {
+  display: block;
+}
+
+#error-message.error {
+  background-color: #f28c8c;
+  color: white;
+}
+
+#error-message.success {
+  background-color: #7bc47f;
+  color: white;
 }
 
 /* Inputs styled */
@@ -128,6 +179,41 @@ input {
   border: 2px solid #f9e2c8;
   padding: 6px 10px;
   border-radius: 10px;
+}
+
+.signup-btn {
+  background-color: #4caf50;
+  font-size: 16px;
+  border-radius: 5px;
+  opacity: 0.5;
+  padding: 10px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.signup-btn:hover {
+  background-color: #45a049;
+  opacity: 1;
+}
+
+#error-box,
+#success-message {
+  margin: auto auto;
+  display: none;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 30px;
+  width: fit-content;
+}
+
+#error-box {
+  background-color: #f28c8c;
+  color: white;
+}
+
+#success-message {
+  background-color: #7bc47f;
+  color: white;
 }
 
 /* Generic button styling used across pages */
@@ -146,7 +232,8 @@ button {
 /* Link buttons (login + finish order + summary) */
 a.customize-link,
 a.login,
-a.finish-order {
+a.finish-order,
+a.new-user {
   text-decoration: none;
   background-color: #f28c8c;
   color: white;
@@ -159,7 +246,8 @@ a.finish-order {
 /* Hover pointers for button-like links */
 a.customize-link:hover,
 a.login:hover,
-a.finish-order:hover {
+a.finish-order:hover,
+a.new-user:hover {
   cursor: pointer;
 }
 
