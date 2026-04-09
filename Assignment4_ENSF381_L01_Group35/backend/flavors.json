@@ -1,0 +1,12 @@
+[
+  { "id": 1, "name": "Vanilla Dream", "price": "$4.99", "description": "Classic creamy vanilla ice cream made with fresh ingredients.", "duration": "8 weeks", "image": "images/vanilla.jpg" },
+  { "id": 2, "name": "Chocolate Bliss", "price": "$5.49", "description": "Rich chocolate ice cream made with smooth cocoa flavor.", "duration": "6 weeks", "image": "images/chocolate.jpg" },
+  { "id": 3, "name": "Strawberry Swirl", "price": "$5.29", "description": "Fresh strawberry ice cream with a sweet fruity swirl.", "duration": "7 weeks", "image": "images/strawberry.jpg" },
+  { "id": 4, "name": "Mint Magic", "price": "$5.19", "description": "Cool mint ice cream with crunchy chocolate pieces.", "duration": "5 weeks", "image": "images/mint.jpg" },
+  { "id": 5, "name": "Cookie Crunch", "price": "$5.79", "description": "Creamy ice cream packed with crushed chocolate cookies.", "duration": "8 weeks", "image": "images/chocolate.jpg" },
+  { "id": 6, "name": "Caramel Delight", "price": "$5.59", "description": "Smooth caramel ice cream with a buttery sweet taste.", "duration": "6 weeks", "image": "images/vanilla.jpg" },
+  { "id": 7, "name": "Mango Tango", "price": "$5.39", "description": "Refreshing mango ice cream with tropical flavor in every bite.", "duration": "4 weeks", "image": "images/strawberry.jpg" },
+  { "id": 8, "name": "Blueberry Burst", "price": "$5.49", "description": "Sweet blueberry ice cream made with real fruit flavor.", "duration": "5 weeks", "image": "images/mint.jpg" },
+  { "id": 9, "name": "Coffee Buzz", "price": "$5.69", "description": "Bold coffee-flavored ice cream for a smooth energizing treat.", "duration": "7 weeks", "image": "images/chocolate.jpg" },
+  { "id": 10, "name": "Pistachio Paradise", "price": "$5.89", "description": "Nutty pistachio ice cream with a creamy and rich texture.", "duration": "6 weeks", "image": "images/mint.jpg" }
+]
